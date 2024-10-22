@@ -1,4 +1,4 @@
-name: Build Docker, Run Flask IP Blocklist Checker, and Scan with Docker Scout
+name: Build Docker, Run Flask IP Blocklist Checker, and Scan with Docker Scout.
 
 on:
   push:

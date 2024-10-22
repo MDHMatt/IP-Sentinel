@@ -1,6 +1,3 @@
-Here’s the updated `README.md` reflecting the app's name, **Flask IP Blocklist Checker**:
-
-```markdown
 # Flask IP Blocklist Checker
 
 ## Overview

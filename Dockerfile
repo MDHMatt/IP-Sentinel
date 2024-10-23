@@ -25,5 +25,4 @@ EXPOSE 8000
 ENV FLASK_APP=app/check_ips.py
 
 # Run the application
-#CMD ["flask", "run", "--host=0.0.0.0", "--port=8000"]
 CMD ["gunicorn", "-w", "2", "-b", "0.0.0.0:8000", "app.check_ips:app"]

@@ -6,12 +6,22 @@ from datetime import datetime
 from threading import Thread
 from pydnsbl import DNSBLIpChecker
 from flask import Flask, render_template, jsonify
+from logging.handlers import RotatingFileHandler
 
 # Path to the configuration files
 ip_file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'config', 'ip_addresses.txt')
 
 # Define the log file path in the same directory as the config
 log_file_path = os.path.join(os.path.dirname(ip_file_path), 'ip_checker.log')
+
+# Set up log rotation
+handler = RotatingFileHandler(log_file_path, maxBytes=2000, backupCount=3)  # 5 MB per file, 3 backups
+
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[handler]
+)
 
 # Configure logging
 logging.basicConfig(

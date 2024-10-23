@@ -1,5 +1,5 @@
-# Use an official Python runtime as a base image
-FROM python:3-slim
+# Use an official Python runtime as a parent image
+FROM python:3.12-slim
 
 # Set the working directory in the container
 WORKDIR /app
@@ -10,18 +10,20 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-# Copy the current directory contents into the container
+# Copy the current directory contents into the container at /app
 COPY . .
 
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
+# Set PYTHONPATH to include the installed dependencies
+ENV PYTHONPATH=/app/dependencies
 
-# Expose the port that the app runs on
+# Make port 8000 available to the world outside this container
 EXPOSE 8000
 
-# Set environment variables for Flask
-ENV FLASK_APP=check_ips.py
-ENV FLASK_ENV=production
+# Define environment variable
+ENV FLASK_APP=app/check_ips.py
 
-# Run the app with Gunicorn
-CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:8000", "check_ips:app"]
+# Run the application
+#CMD ["flask", "run", "--host=0.0.0.0", "--port=8000"]
+CMD ["gunicorn", "-w", "2", "-b", "0.0.0.0:8000", "app.check_ips:app"]

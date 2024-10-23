@@ -1,5 +1,4 @@
-Flask==2.3.3
-pydnsbl==1.1.6
-gunicorn==22.0.0
-#aiodns<=2.0
-#pycares==4.2.0
+Flask>=2.3.3
+pydnsbl>=1.1.6
+gunicorn>=22.0.0
+

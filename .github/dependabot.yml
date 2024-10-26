@@ -7,6 +7,7 @@ updates:
 #      interval: "weekly"
 #  # Enable version updates for Docker
   - package-ecosystem: "docker"
+    target-branch: "dev" # specify the target branch here
     # Look for a `Dockerfile` in the `root` directory
     directory: "/"
     # Check for updates once a week
@@ -14,7 +15,9 @@ updates:
       interval: "daily"
     commit-message:
       prefix: "update"             # Commit message prefix for updates
+
   - package-ecosystem: "pip"  # Specify the package ecosystem (Python)
+    target-branch: "dev" # specify the target branch here
     directory: "/"              # Location of the requirements file
     schedule:
       interval: "daily"        # Check for updates weekly

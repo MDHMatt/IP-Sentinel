@@ -1,4 +1,4 @@
-name: Build Docker, Run IP Sentinel, the Flask IP Blocklist Checker, and Scan with Docker Scout
+name: Build Docker, Run IP Sentinel, the Flask IP Blocklist Checker
 
 on:
   push:
@@ -37,9 +37,3 @@ jobs:
           tags: |
             ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.REPO_NAME }}:latest
             ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.REPO_NAME }}:${{ github.sha }}
-
-      # - name: Scan Docker Image with Docker Scout
-      #   uses: docker/scout-action@v1
-      #   with:
-      #     image: ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.REPO_NAME }}:latest
-      #     command: "scan"  # Specify the command to scan the image

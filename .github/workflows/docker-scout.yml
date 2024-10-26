@@ -27,7 +27,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t ${{ vars.DOCKERHUB_USERNAME }}/IP-Sentinel:latest .
+          docker build -t ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.REPO_NAME }}:latest .
 
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v4
@@ -35,11 +35,11 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ vars.DOCKERHUB_USERNAME }}/IP-Sentinel:latest
-            ${{ vars.DOCKERHUB_USERNAME }}/IP-Sentinel:${{ github.sha }}
+            ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.REPO_NAME }}:latest
+            ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.REPO_NAME }}:${{ github.sha }}
 
       - name: Scan Docker Image with Docker Scout
         uses: docker/scout-action@v1
         with:
-          image: ${{ vars.DOCKERHUB_USERNAME }}/IP-Sentinel:latest
+          image: ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.REPO_NAME }}:latest
           command: "scan"  # Specify the command to scan the image

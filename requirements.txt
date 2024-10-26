@@ -17,4 +17,4 @@ packaging==24.1
 pycares==4.4.0
 pycparser==2.22
 pydnsbl==1.1.6
-Werkzeug==3.0.4
+Werkzeug==3.0.6

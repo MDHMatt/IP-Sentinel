@@ -38,8 +38,8 @@ jobs:
             ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.REPO_NAME }}:latest
             ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.REPO_NAME }}:${{ github.sha }}
 
-      - name: Scan Docker Image with Docker Scout
-        uses: docker/scout-action@v1
-        with:
-          image: ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.REPO_NAME }}:latest
-          command: "scan"  # Specify the command to scan the image
+      # - name: Scan Docker Image with Docker Scout
+      #   uses: docker/scout-action@v1
+      #   with:
+      #     image: ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.REPO_NAME }}:latest
+      #     command: "scan"  # Specify the command to scan the image

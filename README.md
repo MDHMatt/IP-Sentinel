@@ -1,8 +1,8 @@
-# Flask IP Blocklist Checker
+# IP-Sentinel
 
 ## Overview
 
-Flask IP Blocklist Checker is a lightweight web application designed to check if specified IP addresses are listed on common DNS-based blacklists (DNSBLs). It assists system administrators and network operators in monitoring and managing IP addresses that may be blacklisted, ensuring better email deliverability and overall network integrity.
+IP-Sentintel is a Flask based IP Blocklist Checker using a lightweight web application designed to check if specified IP addresses are listed on common DNS-based blacklists (DNSBLs). It assists system administrators and network operators in monitoring and managing IP addresses that may be blacklisted, ensuring better email deliverability and overall network integrity.
 
 ## Technologies Used
 

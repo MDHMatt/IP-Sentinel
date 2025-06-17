@@ -36,7 +36,7 @@ jobs:
           docker build -t ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.REPO_NAME }}:dev .
 
       - name: Build and Push Docker Image for dev
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v6
         with:
           context: .
           push: true
@@ -67,7 +67,7 @@ jobs:
           docker build -t ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.REPO_NAME }}:latest .
 
       - name: Build and Push Docker Image for main
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v6
         with:
           context: .
           push: true

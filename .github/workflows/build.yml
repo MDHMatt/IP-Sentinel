@@ -1,4 +1,4 @@
-name: Build Docker, Run IP Sentinel, the Flask IP Blocklist Checker.
+name: Build Docker, Run IP Sentinel, the Flask IP Blocklist Checker
 
 permissions:
   contents: read

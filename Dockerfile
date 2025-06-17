@@ -2,7 +2,7 @@
 ARG PYTHON_VERSION=3.12-slim
 ARG PYTHON_MAJOR_VERSION=3.12
 
-# Stage 1: Build the Flask app in a temporary container
+# Stage 1: Build the Flask app in a temporary container.
 FROM python:${PYTHON_VERSION} AS builder
 
 # Set working directory
